@@ -7,7 +7,7 @@ import {
   list,
 } from "firebase/storage";
 
-import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database';
+import { getDatabase, ref, onValue, push as firebasePush, set as firebaseSet, update as firebaseUpdate } from 'firebase/database';
 
 import { storage } from "./firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,34 +20,36 @@ import './App.css';
 function App() {
 
   const db = getDatabase();
-  const  galleryDataRef = ref(db, "artwork/gallery/");
+  const galleryDataRef = ref(db, "artwork/gallery/");
 
   const imagesListRef = pref(storage, "thumbnails/");
   const [imageUrls, setImageUrls] = useState(new Map());
 
 
-  // retains up-to-date state map (img filename -> download url)
-  useEffect(() => {
-    const fetchUrls = async () => {
-      var replacementMap = new Map();
+  // // retains up-to-date state map (img filename -> download url)
+  // // POINTLESS NOW: DISREGARD
   
-      const response = await listAll(imagesListRef);
-      const urlPromises = response.items.map(async (item) => {
-        const url = await getDownloadURL(item);
-        const fileName = pref(storage, url).name;
-        replacementMap.set(fileName, url);
-      });
+  // useEffect(() => {
+  //   const fetchUrls = async () => {
+  //     let replacementMap = new Map();
   
-      // Wait for all the getDownloadURL promises to resolve
-      await Promise.all(urlPromises);
+  //     const response = await listAll(imagesListRef);
+  //     const urlPromises = response.items.map(async (item) => {
+  //       const url = await getDownloadURL(item);
+  //       const fileName = pref(storage, url).name;
+  //       replacementMap.set(fileName, url);
+  //     });
   
-      // Now update the state after the map is fully built
-      // console.log(replacementMap);
-      setImageUrls(new Map(replacementMap)); 
-    };
+  //     // Wait for all the getDownloadURL promises to resolve
+  //     await Promise.all(urlPromises);
   
-    fetchUrls();
-  }, []);
+  //     // Now update the state after the map is fully built
+  //     console.log(replacementMap);
+  //     setImageUrls(new Map(replacementMap)); 
+  //   };
+  
+  //   fetchUrls();
+  // }, []);
 
   const [allPiecesArray, setAllPiecesArray] = useState([]);
 
@@ -57,28 +59,30 @@ function App() {
 
     const galleryDataRef = ref(db, "Artwork/Gallery/");
 
-    const diveTest = ref(db, "Artwork/Gallery/0");
-    console.log("ref : " + diveTest);
-    console.log("Gallery data ref:" + galleryDataRef);
-
-    // const unregisterFunction = onValue(diveTest, (snapshot) => {
-    //   const diveVal = snapshot.val();
-    //   console.log(diveVal);
-    // })
-
     const unregisterFunction = onValue(galleryDataRef, (snapshot) => {
       console.log("unregisterfunction");
       const allPiecesObj = snapshot.val();
 
       if (allPiecesObj) {
 
+        console.log("AllPiecesObj: ");
         console.log(allPiecesObj);
+
+        console.log("ImageURLS: " + imageUrls);
 
         const allPiecesKeys = Object.keys(allPiecesObj);
 
         const allPiecesArray = allPiecesKeys.map((key) => {
           const singlePieceCopy = {...allPiecesObj[key]};
           singlePieceCopy.key = key;
+
+          // console.log(JSON.parse( JSON.stringify(singlePieceCopy ) ));
+          // console.log(imageUrls.get(singlePieceCopy.img_path));
+
+          // let userThumbnailRef = ref(db, "Artwork/Gallery/" + key + "/thumbnail_path");
+
+          // firebaseSet(userThumbnailRef, imageUrls.get(singlePieceCopy.img_path));
+
           return singlePieceCopy;
         });
         
@@ -106,7 +110,7 @@ function App() {
         })} */}
 
         {allPiecesArray.map((piece) => {
-          return <img src={imageUrls.get(piece.img_path)}/>
+          return <img src={piece.thumbnail_path}/>
         })}
       </div>
 
