@@ -8,7 +8,7 @@
   },
   "hosting": {
     "site": "jimswebsite-4aed7-35b74",
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
