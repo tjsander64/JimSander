@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import {
   ref as pref,
-  uploadBytes,
   getDownloadURL,
   listAll,
   list,
@@ -12,6 +11,7 @@ import { getDatabase, ref, onValue, push as firebasePush, set as firebaseSet, up
 
 import { storage } from "../firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card } from "./card";
 
 export function GalleryPage(props) {
     
@@ -61,17 +61,22 @@ export function GalleryPage(props) {
 
       if (allPiecesObj) {
 
-        console.log("AllPiecesObj: ");
-        console.log(allPiecesObj);
-
-        console.log("ImageURLS: " + imageUrls);
-
         const allPiecesKeys = Object.keys(allPiecesObj);
 
         const allPiecesArray = allPiecesKeys.map((key) => {
           const singlePieceCopy = {...allPiecesObj[key]};
           singlePieceCopy.key = key;
+          
+        //   const storageRef = pref(storage, "Paintings/" + singlePieceCopy.img_path);
 
+        //   const db = getDatabase();
+        //   const fullPathRef = ref(db, "Artwork/Gallery/" + key + "/full_img_path");
+
+        //   getDownloadURL(storageRef).then((url) => {
+        //     firebaseSet(fullPathRef, url);
+        //   })
+
+          
           return singlePieceCopy;
         });
         
@@ -83,7 +88,7 @@ export function GalleryPage(props) {
         setAllPiecesArray([]);
       }
     });
-    console.log(imageUrls);
+    // console.log(imageUrls);
     return () => {unregisterFunction();}
   }, []);
   
@@ -92,14 +97,19 @@ export function GalleryPage(props) {
     <div>
       <div className="h1 mb-2"> Various Artworks </div>
 
-      <div className="">
+      <div className="d-flex flex-wrap justify-content-center">
         {/* {Array.from(imageUrls.values()).map((url) => {
           // TEMPORARY: CHANGE 2 RENDER BASED ON RTDB
           return <img src={url} />;
         })} */}
 
         {allPiecesArray.map((piece) => {
-          return <img src={piece.thumbnail_path}/>
+            return (
+                <div className="">
+                    <Card className="" photo={piece.thumbnail_path} link={piece.full_img_path} skills={piece.title} desc={piece.medium + ", " + piece.year} ext={false} />
+                </div>
+            )
+            // return <img src={piece.thumbnail_path}/>
         })}
       </div>
 

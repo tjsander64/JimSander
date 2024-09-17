@@ -1,0 +1,31 @@
+div.card {
+    /* flex: 0 0 250px; */
+    flex-wrap:wrap;
+    /* background-color: #111417; */
+    margin: .5rem;
+    border-radius: 10px;
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.16),
+      0 1px 3px rgba(0,0,0,0.23);
+    }
+  
+  div.card p {
+    padding: .5rem 1rem;
+    margin-bottom: 0rem;
+  }
+  
+  div.card img {
+    border-radius: 10px;
+    
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+
+  @media (min-width: 810px) {
+    div.card {        
+        /* position: relative; 
+        top:50%;
+        transform: translateY(-50%); */
+    }
+  }

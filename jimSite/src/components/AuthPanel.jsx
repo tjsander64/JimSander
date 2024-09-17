@@ -1,8 +1,8 @@
-import {React, useEffect} from "react";
+import {React, useEffect, useState} from "react";
 import { getAuth, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth'
 import { StyledFirebaseAuth } from "react-firebaseui";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const auth = getAuth();
 
 
 const firebaseUIConfig = {
@@ -20,14 +20,21 @@ const firebaseUIConfig = {
   }
   
 export function AuthPanel() {
+        
+    const auth = getAuth();
 
+    const [displayPanel, setDisplayPanel] = useState("");
+
+    var loggedIn = "";
     useEffect(() => {
         const auth = getAuth(); //access the "authenticator"
    
         const unregisterFunction = onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser){ //firebaseUser defined: is logged in
-                console.log('logged in', firebaseUser.displayName);
+                console.log('logged in', firebaseUser.uid);
                 //do something with firebaseUser (e.g. assign to a state variable)
+                setDisplayPanel("d-none");
+
             }
             else { //firebaseUser is undefined: is not logged in
                 console.log('logged out');
@@ -43,9 +50,7 @@ export function AuthPanel() {
 
   
     return (
-      <div>
-        <h3>Curator Mode</h3>
-        <p>Sign-in:</p>
+      <div className={displayPanel}>
         <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
       </div>
     );

@@ -10,20 +10,18 @@ import {
 import { getDatabase, ref, onValue, push as firebasePush, set as firebaseSet, update as firebaseUpdate } from 'firebase/database';
 import { GalleryPage } from './components/galleryPage';
 import { AuthPanel } from './components/AuthPanel';
-
+import UploadPane from './components/UploadPane';
+import { getAuth, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth'
 import { storage } from "./firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
-// TODO: store 
-
-// TODO: break out gallery into its own component, don't keep code on main app page
 
 function App() {
   return (
     <div>
       <GalleryPage />
       <AuthPanel />
+      <UploadPane />
     </div>
   )
 }
