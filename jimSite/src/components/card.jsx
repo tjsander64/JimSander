@@ -25,9 +25,9 @@ export function Card(props) {
         return (
             <div className="card p-0">
                 <a href={link} className="p-0">
-                    <img className="" src={photoPath}></img> 
-                    <p className="fw-bold pb-0 d-flex p-1 justify-content-center"> {skills} </p>  
-                    <p className="d-flex p-1 justify-content-center"> {desc} </p>  
+                    <img className="border border-white" src={photoPath}></img> 
+                    <p className="fw-bold pb-0 d-flex p-1 justify-content-center text-light"> {skills} </p>  
+                    <p className="d-flex p-1 justify-content-center text-light"> {desc} </p>  
                 </a>         
             </div>
         )

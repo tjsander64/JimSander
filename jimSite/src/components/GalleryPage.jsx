@@ -13,6 +13,8 @@ import { storage } from "../firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from "./card";
 
+import "../stylesheets/GalleryPage.css"
+
 export function GalleryPage(props) {
     
   const db = getDatabase();
@@ -95,13 +97,9 @@ export function GalleryPage(props) {
 
   return (
     <div>
-      <div className="h1 mb-2"> Various Artworks </div>
+      <div className="h1 mb-2 text-light fw-bold"> Various Artworks </div>
 
-      <div className="d-flex flex-wrap justify-content-center">
-        {/* {Array.from(imageUrls.values()).map((url) => {
-          // TEMPORARY: CHANGE 2 RENDER BASED ON RTDB
-          return <img src={url} />;
-        })} */}
+      <div className="d-flex flex-wrap align-items-end justify-content-center">
 
         {allPiecesArray.map((piece) => {
             return (

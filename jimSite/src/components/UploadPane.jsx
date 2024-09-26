@@ -65,13 +65,13 @@ export default function UploadPane(props) {
     }
 
     return (
-         <div>
-            <input type="file" onChange={ (e) => {setChosenFile(e.target.files[0])}} />
-            <input type="text" onInput={(e) => {setNewTitle(e.target.value)}} placeholder={"Title"} />
-            <input type="text" onInput={(e) => {setNewMed(e.target.value)}} placeholder={"Medium"}/>
-            <input type="text" onInput={(e) => {setNewYr(e.target.value)}} placeholder={"Year"}/>
+         <div className="align-items-center flex-grow-0">
+            <input type="file" className="" onChange={ (e) => {setChosenFile(e.target.files[0])}} />
+            <input type="text" className="" onInput={(e) => {setNewTitle(e.target.value)}} placeholder={"Title"} />
+            <input type="text" className="" onInput={(e) => {setNewMed(e.target.value)}} placeholder={"Medium"}/>
+            <input type="text" className="" onInput={(e) => {setNewYr(e.target.value)}} placeholder={"Year"}/>
 
-            <button onClick={uploadHandler}/>
+            <button type="button" className="m-1 p-0" onClick={uploadHandler}> Upload </button>
          </div>   
     )
 }

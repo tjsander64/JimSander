@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,8 +43,16 @@
 .read-the-docs {
   color: #888;
 }
-
+/* 
 img {
   max-width: 250px;
   max-height: 250px;
+} */
+
+body {
+  background-color: #d4cd6e;
+}
+
+body {
+  font-family: "Raleway", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
