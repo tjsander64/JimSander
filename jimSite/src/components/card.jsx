@@ -27,7 +27,7 @@ export function Card(props) {
                 <a href={link} className="p-0">
                     <img className="border border-white" src={photoPath}></img> 
                     <p className="fw-bold pb-0 d-flex p-1 justify-content-center text-light"> {skills} </p>  
-                    <p className="d-flex p-1 justify-content-center text-light"> {desc} </p>  
+                    <p className="d-flex p-1 mt-0 justify-content-center text-light"> {desc} </p>  
                 </a>         
             </div>
         )

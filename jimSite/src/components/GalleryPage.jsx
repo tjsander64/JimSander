@@ -15,6 +15,14 @@ import { Card } from "./card";
 
 import "../stylesheets/GalleryPage.css"
 
+import { AuthPanel } from "./AuthPanel";
+import UploadPane from "./UploadPane";
+
+
+
+
+
+
 export function GalleryPage(props) {
     
   const db = getDatabase();
@@ -97,7 +105,7 @@ export function GalleryPage(props) {
 
   return (
     <div>
-      <div className="h1 mb-2 text-light fw-bold"> Various Artworks </div>
+      <div className="h1 mb-2 text-light fw-bold"> Gallery </div>
 
       <div className="d-flex flex-wrap align-items-end justify-content-center">
 
@@ -111,6 +119,8 @@ export function GalleryPage(props) {
         })}
       </div>
 
+      <AuthPanel />
+      <UploadPane />
     </div>
 
   )

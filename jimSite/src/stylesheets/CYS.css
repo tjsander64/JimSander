@@ -1,0 +1,62 @@
+a {
+    color: white;
+}
+
+a:hover {
+    color: mintcream;
+}
+
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.cover img {
+    display: block;
+    border-radius: 10px;
+
+    width: 100%; 
+    height: auto; 
+    max-width: 600px; 
+    max-height: 800px;
+
+    flex-shrink: 1;
+}
+
+.cover {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+p {
+    color: white;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+
+}
+
+@Media (min-width: 769px) {
+    .DescCopy {
+        /* display:flex; */
+        flex-shrink: 1;
+        flex-grow: 1;
+        /* flex-basis:1; */
+        max-width: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    .DescCopy p {
+        align-self: center;
+        margin-left: 3rem;
+        font-size: larger;
+    }
+    .OverallCYS {
+        display:flex;
+    }
+    .cover {
+        width: 40%;
+    }
+}
