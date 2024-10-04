@@ -2,6 +2,7 @@ import {React, useEffect, useState} from "react";
 import { getAuth, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth'
 import { StyledFirebaseAuth } from "react-firebaseui";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UploadPane from "./UploadPane";
 
 
 
@@ -48,10 +49,22 @@ export function AuthPanel() {
     })
     
 
-  
+    if(displayPanel==="") {
+      return (
+        <div>
+                {console.log(displayPanel)}
+
+          <div className={displayPanel}>
+            <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+          </div>
+
+        </div>
+      );
+  } else {
     return (
-      <div className={displayPanel}>
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+      <div>
+        <UploadPane />
       </div>
-    );
+    )
+  }
 }

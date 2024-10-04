@@ -1,34 +1,72 @@
+html, body, #root, .App {
+    height: 100%;
+  }
+
 h1 {
     font-weight: bold;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 3rem;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 2px 2px 2px black;
 }
 
 a h1 {
-    color: white;
+    color: #fffff0;
+    text-align: center;
 }
 
+.BigLink {
+    background-color: rgb(51, 96, 51);
+    border-radius: 50px;
+}
+
+#GalPane, #CYSPane, #MOAPane, #AbtPane {
+    border-radius: 0px;
+}
 
 @Media (min-width: 769px) {
+    #LinksPage {
+        height: 100%;
+    }
     .LinksCont {
         display: flex;
         margin-top: 2rem;
+        height: 100%;
     }
     .BigLink {
         margin-left:1rem;
         margin-right:1rem;
         display:flex;
-        background-image: url("src/assets/Chronic Yard Sale 1.JPG");
         width: 100%;
         justify-content: center;
         height: 100%;
         border-radius: 15px;
         border-color: white;
+        
+        border-left:.2rem;
+        border-right:.2rem;
     }
  
     .LinksCont a {
         display: flex;
         width:25%;
+        height: 400px;
     }
+
+    #GalPane {
+        background-image: url("../assets/Wreck of the Temple 2 .jpeg");
+        background-size: cover;
+    }
+    #CYSPane {
+        background-image: url("../assets/Chronic Yard Sale 1.JPG");
+        background-size: cover;
+    }
+    #MOAPane {
+        background-image: url("../assets/MOA.jpg");
+        background-size: cover;
+    }
+    #AbtPane {
+        background-image: url("../assets/Poang.jpeg");
+        background-size: cover;
+    }
+
 }

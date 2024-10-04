@@ -45,9 +45,17 @@
 }
 
 
-body {
+body, html {
   /* background-color: #d4cd6e; */
   background-color: #476e5a;
+  height: 100vh;
+}
+
+
+#root {
+  height: 100%;
+  background-color: #476e5a;
+
 }
 
 body {

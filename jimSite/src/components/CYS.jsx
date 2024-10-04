@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../stylesheets/CYS.css";
+import cover from "../assets/Chronic Yard Sale 1.JPG";
 
 
 export function ChronicYardSale(props) {
@@ -9,7 +10,7 @@ export function ChronicYardSale(props) {
             <h1 className="fw-bold text-light"> The Chronic Yard Sale: A Novel </h1>
             <div className="OverallCYS">
                 <div className="cover">
-                    <img className="border border-white" alt="The front cover of Jim's book, the Chronic Yard Sale. Painted by Jim, it depicts a pile of mostly junk, a pomeranian sitting on a lawn chair, and a steel fence in front of a dark house. A flying saucer hovers in front of the sunset." src="src/assets/Chronic Yard Sale 1.JPG" />
+                    <img className="border border-white" alt="The front cover of Jim's book, the Chronic Yard Sale. Painted by Jim, it depicts a pile of mostly junk, a pomeranian sitting on a lawn chair, and a steel fence in front of a dark house. A flying saucer hovers in front of the sunset." src={cover} />
                 </div>
                 <div className="DescCopy">
                     <p>

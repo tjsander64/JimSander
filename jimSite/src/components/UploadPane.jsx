@@ -1,5 +1,6 @@
 import {React, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../stylesheets/UploadPane.css";
 import {
     ref as pref,
     getDownloadURL,

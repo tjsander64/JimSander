@@ -26,8 +26,14 @@ import { Route, Routes, Navigate, Link } from 'react-router-dom';
 
 
 function App() {
+
+  useEffect (() => {
+    document.title = "Jim's Website";
+  }, []);
+
+
   return (
-    <div>
+    <div className="height: 100%">
       <NavBar/>
       <Routes>
         <Route index element={<LinksPage />}/>

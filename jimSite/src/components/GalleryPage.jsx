@@ -16,7 +16,6 @@ import { Card } from "./card";
 import "../stylesheets/GalleryPage.css"
 
 import { AuthPanel } from "./AuthPanel";
-import UploadPane from "./UploadPane";
 
 
 
@@ -120,7 +119,6 @@ export function GalleryPage(props) {
       </div>
 
       <AuthPanel />
-      <UploadPane />
     </div>
 
   )
