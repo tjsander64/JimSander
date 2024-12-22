@@ -104,13 +104,13 @@ export function GalleryPage(props) {
 
   return (
     <div>
-      <div className="h1 mb-2 text-light fw-bold"> Gallery </div>
+      <div className="h1 mb-5 mt-4 fw-bold"> Gallery </div>
 
-      <div className="d-flex flex-wrap align-items-end justify-content-center">
+      <div className="mx-5 mt-2 align-items-end justify-content-center" id="cardDeck">
 
         {allPiecesArray.map((piece) => {
             return (
-                <div className="">
+                <div className="d-flex ">
                     <Card className="" photo={piece.thumbnail_path} link={piece.full_img_path} skills={piece.title} desc={piece.medium + ", " + piece.year} ext={false} />
                 </div>
             )

@@ -10,8 +10,13 @@ h1 {
     height: auto; 
     max-width: 600px; 
     max-height: 800px;
+    margin-left: 1.5em;
 
     flex-shrink: 1;
+}
+
+.OverallAbout {
+    justify-content: center;
 }
 
 .Jimself {
@@ -19,13 +24,25 @@ h1 {
     justify-content: center;
     align-items: center; 
     flex-wrap: wrap;
+    margin-right: 2em;
 }
 
 p {
-    color: white;
+    color: black;
     margin-top: 1rem;
-    text-shadow: 1px 1px 2px black;
+    /* text-shadow: 1px 1px 2px black; */
 
+}
+
+.BioCopy {
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: left;
+}
+
+
+p.h1 {
+    text-shadow: none ;
 }
 
 @Media (min-width: 769px) {
@@ -45,8 +62,10 @@ p {
     }
     .OverallAbout {
         display:flex;
+        margin-left: 3em;
     }
     .Jimself {
         width: 40%;
+        margin-left: 1.5em;
     }
 }

@@ -6,7 +6,7 @@ import Jim from "../assets/Poang.jpeg";
 export function AboutPage(props) {
     return (
         <div>
-            <h1 className="fw-bold text-light"> About Jim </h1>
+            <p className="fw-bold h1 mb-4 mt-2"> About Jim </p>
             <div className="OverallAbout">
                 <div className="Jimself">
                     <img className="border border-white" alt="Jim, my dad, middle-aged white guy, sits in a chair in a small room. The chair is Ikea brand, called a 'Poang.' He has a white beard and a serious, if slightly surprised, look on his face." src={Jim} />

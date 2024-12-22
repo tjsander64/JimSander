@@ -23,11 +23,11 @@ export function Card(props) {
     )
     } else {
         return (
-            <div className="card p-0">
+            <div className="card p-0 w-100">
                 <a href={link} className="p-0">
-                    <img className="border border-white" src={photoPath}></img> 
-                    <p className="fw-bold pb-0 d-flex p-1 justify-content-center text-light"> {skills} </p>  
-                    <p className="d-flex p-1 mt-0 justify-content-center text-light"> {desc} </p>  
+                    <img className="border border-black" src={photoPath}></img> 
+                    <p className="fw-bold pb-0 d-flex p-1 justify-content-center"> {skills} </p>  
+                    <p className="d-flex p-1 mt-0 justify-content-center"> {desc} </p>  
                 </a>         
             </div>
         )

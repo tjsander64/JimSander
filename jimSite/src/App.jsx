@@ -17,6 +17,7 @@ import { AboutPage } from './components/AboutPage';
 import { NavBar } from './components/NavBar';
 import { ChronicYardSale } from './components/CYS';
 import { MilkOfAmnesia } from './components/MOA';
+import { MiscPage } from './components/MiscPage';
 
 import { getAuth, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth'
 import { storage } from "./firebase";
@@ -33,15 +34,16 @@ function App() {
 
 
   return (
-    <div className="height: 100%">
+    <div className="height: 100% px-0">
       <NavBar/>
       <Routes>
         <Route index element={<LinksPage />}/>
         <Route path="links" element={<LinksPage />}/>
         <Route path="Gallery" element={<GalleryPage/>}/>
         <Route path="About" element={<AboutPage/>} />
-        <Route path="ChronicYardSale" element={<ChronicYardSale/>} />
-        <Route path="MilkOfAmnesia" element={<MilkOfAmnesia />} />
+        <Route path="MiscPage/ChronicYardSale" element={<ChronicYardSale/>} />
+        <Route path="MiscPage/MilkOfAmnesia" element={<MilkOfAmnesia />} />
+        <Route path="MiscPage" element = {<MiscPage />} />
 
       </Routes>
       {/* <GalleryPage /> */}

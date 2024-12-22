@@ -1,6 +1,6 @@
-div.card {
-    /* flex: 0 0 250px; */
-    flex-wrap:wrap;
+#cardDeck div {
+    width: 21%; 
+    flex-wrap: wrap;
     /* background-color: #111417; */
     margin: 1rem;
     /* border-radius: 10px; */
@@ -10,9 +10,15 @@ div.card {
     } */
      border-width: 0;
      
-  /* background-color: #d4cd6e */
-    background-color: #476e5a;
+    /* background-color: #476e5a; */
+    background-color: #f5f2ed;
 
+
+}
+
+div.card {
+  width: 100%;
+  display: flex;
 }
   
   div.card p {

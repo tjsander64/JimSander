@@ -2,3 +2,25 @@ img {
     max-width: 250px;
     max-height: 250px;
   }
+
+#cardDeck {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cardDeck div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@Media (max-width: 1024px) {
+  #cardDeck {
+    justify-content: space-between;
+  }
+  div.card {
+    width: auto;
+  }
+  #cardDeck div {
+    width: auto;
+  }
+}

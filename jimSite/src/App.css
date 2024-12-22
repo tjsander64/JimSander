@@ -2,10 +2,15 @@
 
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* max-width: 1280px; */
+  /* margin: 0 auto;
+  padding: 2rem; */
   text-align: center;
+  margin-top: 0;
+}
+
+#root div {
+  margin-top: 0;
 }
 
 .logo {
@@ -46,15 +51,17 @@
 
 
 body, html {
-  /* background-color: #d4cd6e; */
-  background-color: #476e5a;
+  background-color: #f5f2ed;
+  /* background-color: #476e5a; */
   height: 100vh;
 }
 
 
 #root {
   height: 100%;
-  background-color: #476e5a;
+  /* background-color: #476e5a; */
+  background-color: #f5f2ed;
+
 
 }
 

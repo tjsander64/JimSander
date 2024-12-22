@@ -20,5 +20,9 @@
 }
 
 p a {
-    color: white;
+    color: black;
+}
+
+p.h1 {
+    text-shadow: none ;
 }
